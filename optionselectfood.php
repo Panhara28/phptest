@@ -34,16 +34,21 @@
 
     <form class="" action="<?php PHP_SELF?>" method="post">
         <select class="" name="search">
-            <option value="<?php echo $array["Healthy"][0]?>"><?php echo $array["Healthy"][0]?></option>
-            <option value="<?php echo $array["Healthy"][1]?>"><?php echo $array["Healthy"][1]?></option>
-            <option value="<?php echo $array["Healthy"][2]?>"><?php echo $array["Healthy"][2]?></option>
-            <option value="<?php echo $array["Healthy"][3]?>"><?php echo $array["Healthy"][3]?></option>
-            <option value="<?php echo $array["Unhealthy"][0]?>"><?php echo $array["Unhealthy"][0]?></option>
-            <option value="<?php echo $array["Unhealthy"][1]?>"><?php echo $array["Unhealthy"][1]?></option>
-            <option value="<?php echo $array["Unhealthy"][2]?>"><?php echo $array["Unhealthy"][2]?></option>
-            <option value="<?php echo $array["Unhealthy"][3]?>"><?php echo $array["Unhealthy"][3]?></option>
+            <?php
+                for ($i=0;$i < count($array["Healthy"]);$i++){
+                  echo '
+                  <option value="'.$array["Healthy"][$i].'">'.$array["Healthy"][$i].'</option>
+                  ';
+                }
+                for ($i=0;$i < count($array["Unhealthy"]);$i++){
+                  echo '
+                  <option value="'.$array["Unhealthy"][$i].'">'.$array["Unhealthy"][$i].'</option>
+                  ';
+                }
+            ?>
         </select>
         <input type="submit" name="submit" value="Submit">
     </form>
+
   </body>
 </html>
