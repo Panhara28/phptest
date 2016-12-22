@@ -8,20 +8,20 @@
   <body>
 
     <?php include 'function.php'; Validate(); ?>
-    <div class="row">
-          <form class="large-12 cloumns" action="<?php PHP_SELF?>" method="post">
-            <div class="large-4 columns">
-              <input type="number" name="DC" placeholder="Data Communication"><br><br>
-              <input type="number" name="CA" placeholder="Computer Achitecture"><br><br>
-              <input type="number" name="DB" placeholder="Database"><br><br>
-            </div>
-            <div class="large-4 columns">
-              <input type="number" name="ENG" placeholder="English"><br><br>
-              <input type="number" name="CPP" placeholder="Cplusplus"><br><br>
-              <input type="number" name="DS" placeholder="Data Structure"><br><br>
-            </div>
-            <div class="large-4 columns">
+    <div class="row" style="margin-top:20px;">
+          <h3 style="font-weight:bold;text-align:center;">Year 2 Semester 1 Dashboard</h3>
+          <p><?php echo Validate(); ?></p>
+          <form action="<?php PHP_SELF?>" method="post">
+            <div class="large-6 columns">
+              <input type="number" name="DC" placeholder="Data Communication">
+              <input type="number" name="CA" placeholder="Computer Achitecture">
+              <input type="number" name="DB" placeholder="Database">
               <input class="button" type="submit" name="submit" value="Submit">
+            </div>
+            <div class="large-6 columns">
+              <input type="number" name="ENG" placeholder="English">
+              <input type="number" name="CPP" placeholder="Cplusplus">
+              <input type="number" name="DS" placeholder="Data Structure">
             </div>
           </form>
     </div>

@@ -69,13 +69,14 @@ function subjectList(){
     }
   }
 
-  function Validate(){
+  function Validate($error){
     if (isset($_POST['submit'])) {
       if (empty($_POST['DC']&&$_POST['CA']&&$_POST['DB']&&$_POST['ENG']&&$_POST['CPP']&&$_POST['DS'])) {
-        echo "<p style='text-align:center;color:red;'>All field *require<p>";
+        $error = "<p style='text-align:center;color:red;'>All field *require<p>";
       }else{
         Average();
       }
     }
+    return $error;
   }
  ?>
