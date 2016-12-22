@@ -1,9 +1,12 @@
 <?php
 function subjectList(){
   $array = array(
-    "Math",
-    "CPP",
-    "Fund",
+    "Data Communication",
+    "Computer Achitecture",
+    "Database",
+    "English",
+    "Cplusplus",
+    "Data Structure",
     "Average",
     "Grade"
   );
@@ -12,12 +15,15 @@ function subjectList(){
   }
 }
 
-  function Average($m,$cpp,$f){
-    $m = $_POST['math'];
-    $cpp = $_POST['cpp'];
-    $f = $_POST['fund'];
+  function Average($dc,$ca,$db,$eng,$cpp,$ds){
+    $dc = $_POST['DC'];
+    $ca = $_POST['CA'];
+    $db = $_POST['DB'];
+    $eng = $_POST['ENG'];
+    $cpp = $_POST['CPP'];
+    $ds = $_POST['DS'];
     if (isset($_POST['submit'])){
-      $result = ($m+$cpp+$f)/3;
+      $result = ($dc+$ca+$db+$eng+$cpp+$ds)/6;
       return $result;
     }
   }
@@ -43,16 +49,19 @@ function subjectList(){
     }
   }
 
-  function result(){
+  function Result(){
     $array = array(
-      $_POST['math'],
-      $_POST['cpp'],
-      $_POST['fund'],
+      $_POST['DC'],
+      $_POST['CA'],
+      $_POST['DB'],
+      $_POST['ENG'],
+      $_POST['CPP'],
+      $_POST['DS'],
       Average(),
       Grade()
     );
-    for ($i=0; $i <count($array) ; $i++) {
-      if (empty($_POST['math']&&$_POST['fund']&&$_POST['cpp'])) {
+    for ($i=0; $i <count($array); $i++) {
+      if (empty($_POST['DC']&&$_POST['CA']&&$_POST['DB']&&$_POST['ENG']&&$_POST['CPP']&&$_POST['DS'])) {
         echo ' ';
       }else {
         echo "<th>$array[$i]</th>";
@@ -62,8 +71,8 @@ function subjectList(){
 
   function Validate(){
     if (isset($_POST['submit'])) {
-      if (empty($_POST['math'] && $_POST['fund'] && $_POST['cpp'])) {
-        echo "All field *require";
+      if (empty($_POST['DC']&&$_POST['CA']&&$_POST['DB']&&$_POST['ENG']&&$_POST['CPP']&&$_POST['DS'])) {
+        echo "<p style='text-align:center;color:red;'>All field *require<p>";
       }else{
         Average();
       }
