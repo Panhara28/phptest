@@ -10,7 +10,7 @@
     <?php include 'function.php'; Validate(); ?>
     <div class="row" style="margin-top:20px;">
           <h3 style="font-weight:bold;text-align:center;">Year 2 Semester 1 Dashboard</h3>
-          <p><?php echo Validate(); ?></p>
+          <p><?php Validate(); ?></p>
           <form action="<?php PHP_SELF?>" method="post">
             <div class="large-6 columns">
               <input type="number" name="DC" placeholder="Data Communication">
